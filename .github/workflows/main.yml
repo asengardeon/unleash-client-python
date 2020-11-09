@@ -27,12 +27,3 @@ jobs:
         env:
           TWINE_USERNAME: ${{ secrets.pypi_username }}
           TWINE_PASSWORD: ${{ secrets.pypi_password }}
-      - name: Notify Slack of pipeline completion
-        uses: 8398a7/action-slack@v2
-        with:
-          status: ${{ job.status }}
-          author_name: Github Action
-        env:
-          GITHUB_TOKEN: ${{ secrets.SPECIAL_TOKEN }}
-        #  SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook }}
-        if: always() 
