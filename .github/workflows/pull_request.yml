@@ -25,18 +25,18 @@ jobs:
       - name: Specification tests
         run: |
           py.test tests/specification_tests
-      #- name: Send coverage to Coveralls
-      #  env:
-      #    COVERALLS_REPO_TOKEN: ${{ secrets.coveralls_repo_token }}
-      #  run: |
-      #    coveralls
-      - name: Notify Slack of pipeline completion
-        uses: 8398a7/action-slack@v2
-        with:
-          status: ${{ job.status }}
-          author_name: Github Action
+      - name: Send coverage to Coveralls
         env:
           GITHUB_TOKEN: ${{ secrets.special_token }}
+        run: |
+          coveralls
+      #- name: Notify Slack of pipeline completion
+      #  uses: 8398a7/action-slack@v2
+      #  with:
+      #    status: ${{ job.status }}
+      #    author_name: Github Action
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.special_token }}
       #    SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook }}
       #  if: always() 
 
@@ -58,12 +58,12 @@ jobs:
           pip install tox
       - name: Run Tox
         run: tox -e py
-      - name: Notify Slack of pipeline completion
-        uses: 8398a7/action-slack@v2
-        with:
-          status: ${{ job.status }}
-          author_name: Github Action
-        env:
-          GITHUB_TOKEN: ${{ secrets.special_token }}
-          #SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook }}
-        if: failure() 
+      #- name: Notify Slack of pipeline completion
+      #  uses: 8398a7/action-slack@v2
+      #  with:
+      #    status: ${{ job.status }}
+      #    author_name: Github Action
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.special_token }}
+      #    #SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook }}
+      #  if: failure() 
