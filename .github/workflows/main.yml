@@ -33,6 +33,6 @@ jobs:
           status: ${{ job.status }}
           author_name: Github Action
         env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
+          GITHUB_TOKEN: ${{ secrets.SPECIAL_TOKEN }}
         #  SLACK_WEBHOOK_URL: ${{ secrets.slack_webhook }}
         if: always() 
