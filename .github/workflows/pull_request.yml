@@ -27,7 +27,7 @@ jobs:
           py.test tests/specification_tests
       - name: Send coverage to Coveralls
         env:
-          GITHUB_TOKEN: ${{ secrets.special_token }}
+          GITHUB_TOKEN: ${{ secrets.coverall_token }}
         run: |
           coveralls
       #- name: Notify Slack of pipeline completion
