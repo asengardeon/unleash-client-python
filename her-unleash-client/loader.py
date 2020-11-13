@@ -55,8 +55,8 @@ def load_features(cache: FileCache,
     """
     Caching
 
-    :param cache: Should be the cache class variable from UnleashClient
-    :param feature_toggles: Should be the features class variable from UnleashClient
+    :param cache: Should be the cache class variable from her-unleash-client
+    :param feature_toggles: Should be the features class variable from her-unleash-client
     :return:
     """
     # Pull raw provisioning from cache.

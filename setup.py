@@ -1,4 +1,4 @@
-"""Setup file for UnleashClient"""
+"""Setup file for her-unleash-client"""
 from setuptools import setup, find_packages
 
 
@@ -9,8 +9,8 @@ def readme():
 
 
 setup(
-    name='UnleashClient',
-    version='3.4.2',
+    name='her-unleash-client',
+    version='1.0.0',
     author='Ivan Lee',
     author_email='ivanklee86@gmail.com',
     description='Python client for the Unleash feature toggle system!',
